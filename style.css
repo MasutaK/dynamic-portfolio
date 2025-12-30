@@ -32,6 +32,18 @@ header {
     position: relative;
 }
 
+#logo {
+    width: 50px;       /* Taille du logo */
+    height: 50px;
+    vertical-align: middle;
+    margin-right: 10px;
+    border-radius: 8px; /* optionnel pour arrondir les coins */
+}
+header h1 {
+    display: inline-block;
+    vertical-align: middle;
+}
+
 header .theme-toggle {
     position: absolute;
     top: 10px;
