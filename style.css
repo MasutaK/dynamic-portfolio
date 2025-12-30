@@ -1,0 +1,80 @@
+/* Simple reset */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* Theme variables */
+:root {
+    --bg-color: #f9f9f9;
+    --text-color: #333;
+    --card-bg: #fff;
+    --card-hover: #e0e0e0;
+}
+
+body.dark {
+    --bg-color: #121212;
+    --text-color: #f1f1f1;
+    --card-bg: #1e1e1e;
+    --card-hover: #333333;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Header */
+header {
+    background-color: #24292e;
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+    position: relative;
+}
+
+header .theme-toggle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+header button {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+/* Sections */
+section { padding: 2rem 1rem; }
+
+#repo-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+/* Project cards */
+.repo {
+    background-color: var(--card-bg);
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    transform: translateY(20px);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s;
+}
+
+.repo:hover {
+    transform: translateY(-5px);
+    background-color: var(--card-hover);
+}
+
+a { color: #0366d6; text-decoration: none; }
+
+#controls {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+#controls label { margin-right: 0.5rem; }
