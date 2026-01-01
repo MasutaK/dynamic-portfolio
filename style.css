@@ -176,3 +176,11 @@ a:hover {
 .repo.animate-in {
     animation: fadeUp 0.5s ease forwards;
 }
+
+/* Footer */
+footer {
+    margin-top: 4rem;
+    padding: 2rem 1.5rem 3rem;
+    text-align: center;
+    color: var(--muted-text);
+}
