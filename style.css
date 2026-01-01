@@ -165,6 +165,28 @@ a:hover {
     animation: fadeUp 0.5s ease forwards;
 }
 
+/* GitHub footer logo */
+.github-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.github-logo {
+    width: 26px;
+    opacity: 0.6;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.github-link:hover .github-logo {
+    opacity: 1;
+    transform: translateY(-3px);
+}
+
+body:not(.dark) .github-logo {
+    filter: none;
+}
+
 /* Footer */
 footer {
     margin-top: 4rem;
