@@ -106,24 +106,12 @@ section {
     margin: auto;
 }
 
-/* Filters and controls */
-#controls {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    margin-bottom: 1.5rem;
-}
-
-#controls label {
-    font-size: 0.9rem;
-    color: var(--muted-text);
-}
-
 /* Repository grid */
 #repo-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 1.5rem;
+    margin-top: 15px;
 }
 
 /* Repository card */
