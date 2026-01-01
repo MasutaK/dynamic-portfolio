@@ -1,108 +1,157 @@
-/* Simple reset */
-* { margin: 0; padding: 0; box-sizing: border-box; }
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 /* Theme variables */
 :root {
-    --bg-color: #f9f9f9;
-    --text-color: #333;
-    --card-bg: #fff;
-    --card-hover: #e0e0e0;
+    --bg-color: #f5f7fa;
+    --text-color: #1f2933;
+    --muted-text: #6b7280;
+
+    --card-bg: #ffffff;
+    --card-hover: #f0f2f5;
+
+    --primary: #2563eb;
+    --border-color: #e5e7eb;
+
+    --radius: 12px;
+    --shadow-sm: 0 4px 12px rgba(0,0,0,0.05);
+    --shadow-md: 0 8px 24px rgba(0,0,0,0.08);
 }
 
 body.dark {
-    --bg-color: #121212;
-    --text-color: #f1f1f1;
-    --card-bg: #1e1e1e;
-    --card-hover: #333333;
+    --bg-color: #0f172a;
+    --text-color: #e5e7eb;
+    --muted-text: #94a3b8;
+
+    --card-bg: #111827;
+    --card-hover: #1f2937;
+
+    --border-color: #1f2937;
 }
 
+/* Base styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
-    transition: background-color 0.3s, color 0.3s;
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Header */
 header {
-    background-color: #24292e;
+    background: linear-gradient(135deg, #111827, #1f2937);
     color: white;
-    padding: 1.5rem 1rem;
+    padding: 1.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
     position: relative;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
+/* Logo */
 #logo {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;     
-    object-fit: cover;       
-    box-shadow: 0 2px 6px rgba(0,0,0,0.3); 
-    vertical-align: middle;
-    margin-right: 12px;
-    display: inline-block;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 14px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.35);
     transition: transform 0.3s ease;
 }
 
 #logo:hover {
-    transform: scale(1.1);  
+    transform: scale(1.08);
 }
 
+/* Title */
 header h1 {
-    font-size: 1.8rem;
-    margin: 0;
+    font-size: 1.6rem;
     font-weight: 700;
-    display: inline-block;
-    vertical-align: middle;
+    letter-spacing: -0.02em;
 }
 
+/* Theme toggle button */
 header .theme-toggle {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 14px;
+    right: 14px;
 }
 
+/* Header button */
 header button {
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-}
-
-/* Sections */
-section { padding: 2rem 1rem; }
-
-#repo-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
-    margin-top: 15px;
-}
-
-/* Project cards */
-.repo {
-    background-color: var(--card-bg);
-    padding: 1rem;
+    background-color: rgba(255,255,255,0.08);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.15);
+    padding: 0.45rem 0.75rem;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    transform: translateY(20px);
-    opacity: 0;
-    transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
-.repo:hover {
-    transform: translateY(-5px);
-    background-color: var(--card-hover);
+header button:hover {
+    background-color: rgba(255,255,255,0.15);
+    transform: translateY(-1px);
 }
 
-a { color: #0366d6; text-decoration: none; }
+/* Main sections */
+section {
+    padding: 2rem 1.5rem;
+    max-width: 1200px;
+    margin: auto;
+}
 
+/* Filters and controls */
 #controls {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
 
-#controls label { margin-right: 0.5rem; }
+#controls label {
+    font-size: 0.9rem;
+    color: var(--muted-text);
+}
+
+/* Repository grid */
+#repo-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Repository card */
+.repo {
+    background-color: var(--card-bg);
+    padding: 1.25rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background-color 0.25s ease;
+}
+
+.repo:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-md);
+    background-color: var(--card-hover);
+}
+
+/* Links */
+a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+a:hover {
+    text-decoration: underline;
+}
