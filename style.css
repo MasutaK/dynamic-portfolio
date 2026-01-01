@@ -155,3 +155,24 @@ a {
 a:hover {
     text-decoration: underline;
 }
+
+/* Reveal animation for scroll-in cards */
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.repo {
+    opacity: 0;
+}
+
+/* When visible, animate */
+.repo.animate-in {
+    animation: fadeUp 0.5s ease forwards;
+}
