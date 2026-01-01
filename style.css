@@ -116,6 +116,7 @@ section {
 
 /* Repository card */
 .repo {
+    opacity: 0;
     background-color: var(--card-bg);
     padding: 1.25rem;
     border-radius: var(--radius);
@@ -156,35 +157,37 @@ a:hover {
     }
 }
 
-.repo {
-    opacity: 0;
-}
-
 /* When visible, animate */
 .repo.animate-in {
     animation: fadeUp 0.5s ease forwards;
 }
 
-/* GitHub footer logo */
 .github-link {
     display: inline-flex;
     align-items: center;
     justify-content: center;
 }
 
+/* GitHub icon size */
 .github-logo {
-    width: 26px;
-    opacity: 0.6;
-    transition: opacity 0.25s ease, transform 0.25s ease;
+    width: 22px;
+    height: 22px;
+    max-width: 22px;
+    max-height: 22px;
+    display: block;
+    opacity: 0.65;
+    transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
+/* Hover effect */
 .github-link:hover .github-logo {
     opacity: 1;
-    transform: translateY(-3px);
+    transform: translateY(-2px);
 }
 
-body:not(.dark) .github-logo {
-    filter: none;
+/* Light / Dark mode handling */
+body.dark .github-logo {
+    filter: invert(1);
 }
 
 /* Footer */
